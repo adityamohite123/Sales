@@ -1,6 +1,6 @@
 <div class="container text-center mt-4">
     <h1>New product</h1>
-    <form class="form-signin" (ngSubmit)="onSubmit()">
+    <form class="form-signin">
         <input type="text" [(ngModel)]="productName" name="name" class="form-control mt-2" placeholder="Product name"
             required maxlength="50" autofocus="" #name="ngModel">
         <div *ngIf="name.invalid && (name.dirty || name.touched)" class="red fz-12">
@@ -32,7 +32,7 @@
              <br>
          </div>
         <br>
-        <button class="btn btn-lg btn-primary btn-block" [disabled]="name.invalid || id.invalid || date.invalid" type="submit">Submit</button>
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="name.invalid || id.invalid || date.invalid" type="submit"  (click)="onSubmit()">Submit</button>
         <button class="btn btn-lg btn-primary btn-block ml-2" (click)="clear()">Clear</button>
     </form>
 </div>
